@@ -1,0 +1,55 @@
+PROGRAM
+
+PunchClock-SetTime
+
+
+PURPOSE
+These scripts are to ensure an IconTime ProxE clock gets its time
+set automatically from a PC that is synced with a reliable time source
+
+The computer where these scripts are run on must be on the same 
+network segment as the time clocks or have access via TCP/1001
+
+LICENSE
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+
+COMPUTER SETUP
+The computer should be set to synchronize with an NTP server on a 
+regular basis, at least once per day.  This can be done via the registry key
+
+: HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Services\W32Time\Tim eProviders\NtpClient
+Select "SpecialPollInterval"   Set the decimal value to the number of seconds 
+between updates
+
+MODIFY THE BAT FILE
+Edit IP Addresses of your clocks
+
+: start telnet.exe <CLOCK IP ADDRESS> 1001
+
+SCHEDULE PunchClock-SetTime.bat
+Once changes are made this program can be sceduled in the Operating system.  If you
+have the AutoPoll feature, it is suggested to set the clock after an autopoll has
+retreived the data from your clock.
+
+NOTICE
+This program has not been endorsed, reviewed, or recommended by IconTime.
+The program author is in no way associated with IconTime
+
+The command syntax has been determined through the use of network monitoring tools
+(winpcap and wireshark), observering unencrypted network traffic created by Tibbo 
+software.  There as been no tampering with, or attempts to decompile or inspect TimeVue.
+
+
+
