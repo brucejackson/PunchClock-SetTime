@@ -88,5 +88,6 @@ objTelnet.SendKeys "{ENTER}"
 WScript.Sleep 100
 objTelnet.SendKeys "BYE{ENTER}"
 WScript.Sleep 100
-
+objTelnet.SendKeys "QUIT{ENTER}"
+WScript.Sleep 100
 

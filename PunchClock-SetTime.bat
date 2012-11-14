@@ -30,6 +30,10 @@
 
 start telnet.exe 192.168.0.50 1001
 cscript PunchClock-SetTime.vbs
-
+taskkill /f /im  telnet.exe
+ 
 start telnet.exe 192.168.0.51 1001
 cscript PunchClock-SetTime.vbs
+taskkill /f /im  telnet.exe
+
+exit
